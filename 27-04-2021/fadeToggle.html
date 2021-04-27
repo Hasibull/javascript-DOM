@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fade in/out/toggle</title>
+</head>
+<body>
+    <button class="fadein">Fade In/Out</button>
+    <!-- <button class="fadeout">Fade Out</button> -->
+
+    <p class="content" style="display: none;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate vero iste cum libero repellat consectetur, repellendus sint consequuntur? Ab libero quae eum quo facere recusandae, illum consectetur voluptatem repudiandae velit!</p>
+
+    <script src="../jquery.min.js"></script>
+    <script>
+        $('.fadein').click(function(){
+            $('.content').fadeToggle(2000);
+        })
+
+        // $('.fadeout').click(function(){
+        //     $('.content').fadeOut(3000);
+        // })
+    </script>
+</body>
+</html>

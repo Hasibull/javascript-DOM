@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Listner</title>
+
+    <style>
+        .modal-btn {
+            display: inline-block;
+            border: 1px solid grey;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .modal-wrapper {
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(236, 231, 231);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .modal-content {
+            width: 600px;
+            height: 200px;
+            border: 5px solid red;
+            padding: 10px;
+            text-align: center;
+            margin: 0 auto;
+            
+        }
+
+        .close{
+            border: 2px solid green;
+            height: 32px;
+            width: 100px;
+            margin-left: 70%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 class="modal-btn" onclick="modal()">Modal popup</h1>
+
+    <div class="modal-wrapper">
+        <div class="modal-content">
+            <h2>Welcome</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsum enim velit mollitia, at aperiam fuga libero iste in. Odio facilis ex quia aliquam fugiat incidunt atque voluptatum fugit pariatur quaerat.</p>
+            <h2 class="close">Close</h2>
+        </div>
+    </div>
+
+    <script>
+
+        function modal() {
+            let element = document.querySelector('.modal-wrapper');
+
+            element.style.display = 'block';
+        }
+
+        document.querySelector('.close').addEventListener('click', function(){
+            let element = document.querySelector('.modal-wrapper');
+
+            element.style.display = 'none';
+        }
+        );
+    </script>
+</body>
+</html>

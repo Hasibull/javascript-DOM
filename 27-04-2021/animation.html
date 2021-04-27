@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation</title>
+
+    <style>
+        .wrapper {
+            text-align: center;
+            height: 600px;
+        }
+        
+        .image {
+            height: 300px;
+            width: 400px;
+        }
+
+        .animate {
+            border: 2px solid red;
+            width: 300px;
+            margin: 15px auto;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="animate">Animation Start</h1>
+        <img class="image" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
+    </div>
+
+    <button class="stop">Stop Animation</button>
+
+    <script src="../jquery.min.js"></script>
+
+
+    <script>
+        let counter = 0
+
+        $('.animate').click(function(){
+            if(counter%2==0){
+                $('.animate').html('Animation Stop');
+                $('.image').animate({height: '500px', width: '600px'}, 4000);
+            }
+            else{
+                $('.animate').html('Animation Start');
+                $('.image').animate({height: '300px', width: '400px'}, 4000);
+            }
+            counter++;
+        })
+
+        $('.stop').click(function(){
+            $('.image').stop();
+        })
+    </script>
+</body>
+</html>

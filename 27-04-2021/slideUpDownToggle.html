@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slide Up/Down/Toggle</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .wrapper {
+            width: 500px;
+            height: auto;
+            margin: 20px auto;
+            text-align: center;
+        }
+        .slider {
+            width: 400px;
+            border: 1px solid grey;
+        }
+        .content {
+            width: 400px;
+            border: 1px solid grey;
+            /* display: none; */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="slider">Slider</h1>
+        <p class="content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit, repudiandae! Magni illo ipsum, quae quia, fuga pariatur laboriosam itaque repellat voluptatum labore natus. Quod, iusto animi excepturi modi velit in?</p>
+    </div>
+
+    <script src="../jquery.min.js"></script>
+    <script>
+        $('.slider').click(function(){
+            $('.content').slideToggle(3000);
+        })
+    </script>
+</body>
+</html>

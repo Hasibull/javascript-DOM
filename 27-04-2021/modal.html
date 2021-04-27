@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modal</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .wrapper {
+            width: 100vw;
+            height: 100vh;
+            text-align: center;
+        }
+
+        button {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .login-wrapper {
+            height: 100%;
+            width: 100%;
+            background-color: grey;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+
+        .login-content {
+            border: 3px inset green;
+            margin: 20px auto;
+            width: 40%;
+            height: 50%;
+            background-color: rgba(172, 255, 47, 0.144);
+        }
+
+        .signup-wrapper {
+            height: 100%;
+            width: 100%;
+            background-color: grey;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: none;
+        }
+        .signup-content {
+            border: 3px inset green;
+            margin: 20px auto;
+            width: 40%;
+            height: 50%;
+            background-color: rgba(172, 255, 47, 0.144);
+        }
+
+        p {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <button class="login">Login</button>
+        <button class="signup">SignUp</button>
+
+        <div class="login-wrapper">
+            <div class="login-content">
+                <p class="close1" align="right" style="font-size: 50px; margin: 0px;">&times;</p>
+                <h2>Login</h2>
+                Username: <input type="text">
+                <br><br>
+                Password: <input type="password">
+                <br><br>
+                <button class="enter">Login</button>
+            </div>
+        </div>
+
+        <div class="signup-wrapper">
+            <div class="signup-content">
+                <p class="close2" align="right" style="font-size: 50px; margin: 0px;">&times;</p>
+                <h2>Sign Up</h2>
+                First Name: <input type="text">
+                <br><br>
+                Last Name: <input type="text">
+                <br><br>
+                Email: <input type="email">
+                <br><br>
+                Password: <input type="password">
+                <br><br>
+                <button class="enter">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let login = document.querySelector('.login');
+        let signup = document.querySelector('.signup');
+
+        login.addEventListener('click', function(){
+            document.querySelector('.login-wrapper').style.display = 'block';
+        });
+
+        let closebutton1 = document.querySelector('.close1');
+
+        closebutton1.addEventListener('click', function(){
+            document.querySelector('.login-wrapper').style.display = 'none';
+        });
+
+        signup.addEventListener('click', function(){
+            document.querySelector('.signup-wrapper').style.display = 'block';
+        });
+
+        let closebutton2 = document.querySelector('.close2');
+
+        closebutton2.addEventListener('click', function(){
+            document.querySelector('.signup-wrapper').style.display = 'none';
+        });
+    </script>
+
+</body>
+</html>

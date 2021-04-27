@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add and Remove Child</title>
+    <style>
+        .first-box {
+            height: 200px;
+            width: 600px;
+            text-align: center;
+            border: 5px solid grey;
+        }
+
+        .second-box {
+            height: 30%;
+            width: 30%;
+            border: 2px solid red;
+            color: white;
+            background-color: grey;
+            font-size: 30px;
+        }
+
+        .control {
+            border: 2px solid green;
+            font-size: 30px;
+            width: 100px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="first-box">
+        <h1>Welcome</h1>
+        <h2 class="hello">Hello</h2>
+    </div>
+
+    <p class="control">Control</p>
+
+
+    <script src="jquery.min.js"></script>
+    <script>
+        // let element = document.querySelector('.first-box');
+
+        // element.style.backgroundColor = 'yellow';
+
+        $('.first-box').css("background-color", "red");
+
+        
+        $('.control').click(function(){
+            $('.first-box').toggle(4000);
+        })
+
+
+        let firstBox = document.querySelector('.first-box');
+
+        let newElement = document.createElement("h1");
+
+        let text = document.createTextNode("Welcome, Hello, Good bye");
+
+        newElement.appendChild(text);
+
+        let existingElement = document.querySelector('.hello');
+
+        firstBox.insertBefore(newElement, existingElement);
+
+    </script>
+</body>
+</html>

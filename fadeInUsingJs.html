@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fadein</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        .wrapper {
+            height: 100vh;
+            width: 100wd;
+            text-align: center;
+        }
+
+        .fade-box {
+            height: 200px;
+            width: 60%;
+            border: 5px inset grey;
+            margin: 0 auto;
+            opacity: 1;
+            transition: opacity;
+            transition-duration: 3s;
+        }
+
+        .fade-box p {
+            font-size: 22px;
+        }
+
+        .control-wrapper {
+            height: 42px;
+            width: 190px;
+            margin: 10px auto;
+            border: 3px outset grey;
+        }
+
+        .control-wrapper h2 {
+            cursor: pointer;
+            margin: 0;
+            padding: 7px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="fade-box">
+            <h1>Welcome</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sapiente ex dolore exercitationem dolor sint alias enim a deserunt, ipsa voluptatum placeat mollitia culpa fugit, voluptate, ut quis. Pariatur, debitis!</p>
+        </div>
+        <div class="control-wrapper">
+            <h2 class="control">Fade Controller</h2>
+        </div>
+    </div>
+
+    <script>
+        let fadeContainer = document.querySelector('.fade-box');
+        let control = document.querySelector('.control');
+        let counter = 0;
+
+        control.addEventListener('click', function(){
+            if(counter%2==0){
+                fadeContainer.style.opacity = '0';
+                setTimeout(function(){
+                    fadeContainer.style.display = 'none';
+                },2500);
+            }
+            else {
+                fadeContainer.style.display = 'block';
+                fadeContainer.style.opacity = '0';
+                setTimeout(function(){
+                    fadeContainer.style.opacity = '1';
+                },400);
+            }
+            counter++;
+        });
+    </script>
+</body>
+</html>

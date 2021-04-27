@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animation Toggle</title>
+
+    <style>
+        .wrapper {
+            text-align: center;
+        }
+        
+        .image {
+            height: 300px;
+            width: 400px;
+            transition: height, width;
+            transition-duration: 6s;
+        }
+
+        .animate {
+            border: 2px solid red;
+            width: 300px;
+            margin: 15px auto;
+            cursor: pointer;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1 class="animate">Animation Start</h1>
+        <img class="image" src="https://images.pexels.com/photos/60597/dahlia-red-blossom-bloom-60597.jpeg?cs=srgb&dl=pexels-pixabay-60597.jpg&fm=jpg" alt="">
+    </div>
+
+    <script>
+        let animate = document.querySelector('.animate');
+
+        let counter = 0;
+
+        animate.addEventListener('click', function(){
+            let image = document.querySelector('.image');
+
+            if(counter%2==0){
+                image.style.height = '600px';
+                image.style.width = '700px';
+                animate.innerHTML = 'Animation Stop';
+            }
+            else {
+                image.style.height = '300px';
+                image.style.width = '400px';
+                animate.innerHTML = 'Animation Start';
+            }
+            counter++;
+        })
+    </script>
+</body>
+</html>
